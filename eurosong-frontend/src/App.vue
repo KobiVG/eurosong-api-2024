@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <CounterComponent></CounterComponent>
+    <div v-for="(grade, index) in grades" :key="index">
+      <CounterComponent :initialValue="grade"/>
+    </div>
   </div>
 </template>
 
@@ -11,6 +13,11 @@ export default {
   name: 'App',
   components: {
     CounterComponent
+  },
+  data () {
+    return {
+      grades: [1, 7, 6, 4, 8, 9, 5]
+    }
   }
 }
 </script>
