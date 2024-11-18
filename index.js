@@ -1,4 +1,3 @@
-
 // Importeren van de express module in node_modules
 const express = require('express');
 const cors = require('cors');
