@@ -1,20 +1,16 @@
+
 <template>
   <div id="app">
     <ul>
-      <li>
-        Home
-      </li>
-      <li>
-        Ranking
-      </li>
-      <li>
-        Voting
+      <li v-for="(page, index) in pages" :key="index" @click="changePage(page)">
+        {{ page }}
       </li>
     </ul>
 
+    <hr>
 
     <div>
-
+      {{ activePage }}
     </div>
   </div>
 </template>
@@ -24,7 +20,13 @@
     name: 'App',
     data() {
       return {
-        activePage: 'home'
+        activePage: 'home',
+        pages: ['home', 'ranking', 'voting', 'about']
+      }
+    },
+    methods: {
+      changePage(page) {
+        this.activePage = page;
       }
     }
   }
