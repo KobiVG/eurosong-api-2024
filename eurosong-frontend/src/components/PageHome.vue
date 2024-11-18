@@ -1,11 +1,17 @@
 <template>
     <div>
-        Page home
+        <h1>
+            Welkom op eurosong.be
+        </h1>
+
+        <p>
+            Op deze website kan je stemmen op je favoriete aurosong kandidaat.
+        </p>
     </div>
 </template>
 
 <script>
     export default {
-    name: 'PageHome'
+        name: 'PageHome'
     }
 </script>

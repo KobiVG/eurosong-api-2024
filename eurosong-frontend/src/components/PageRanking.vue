@@ -6,6 +6,6 @@
 
 <script>
     export default {
-    name: 'PageRanking'
+        name: 'PageRanking'
     }
 </script>

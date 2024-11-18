@@ -1,11 +1,11 @@
 <template>
     <div>
-        Page voting
+        Page artist
     </div>
 </template>
 
 <script>
     export default {
-        name: 'PageVoting'
+        name: 'PageArtist'
     }
 </script>

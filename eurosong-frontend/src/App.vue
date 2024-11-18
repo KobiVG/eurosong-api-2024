@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <ul>
-      <li v-for="(page, index) in pages" :key="index" @click="changePage(page)">
+      <li v-for="(page, index) in pages" :key="index" @click="changePage(page)" style="cursor: pointer;">
         {{ page }}
       </li>
     </ul>
@@ -10,18 +10,32 @@
     <hr>
 
     <div>
-      {{ activePage }}
+      <PageHome v-if="activePage == 'home'" />
+      <PageRanking v-if="activePage == 'ranking'" />
+      <PageVoting v-if="activePage == 'voting'" />
+      <PageArtist v-if="activePage == 'artists'" />
     </div>
   </div>
 </template>
 
 <script>
+  import PageHome from './components/PageHome.vue'
+  import PageRanking from './components/PageRanking.vue'
+  import PageVoting from './components/PageVoting.vue'
+  import PageArtist from './components/PageArtist.vue';
+
   export default {
     name: 'App',
+    components: {
+      PageHome,
+      PageRanking,
+      PageVoting,
+      PageArtist,
+    },
     data() {
       return {
         activePage: 'home',
-        pages: ['home', 'ranking', 'voting', 'about']
+        pages: ['home', 'ranking', 'voting', 'artists']
       }
     },
     methods: {
