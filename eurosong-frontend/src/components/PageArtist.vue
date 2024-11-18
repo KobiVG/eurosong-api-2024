@@ -1,6 +1,6 @@
 <template>
     <div>
-        Page artist
+        Page artists
     </div>
 </template>
 
