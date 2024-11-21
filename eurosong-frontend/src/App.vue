@@ -34,12 +34,13 @@
     },
     data() {
       return {
-        activePage: 'voting',
+        activePage: 'artists',
         pages: ['home', 'ranking', 'voting', 'artists']
       }
     },
     methods: {
       changePage(page) {
+        console.log("Changing page to: " + page);
         this.activePage = page;
       }
     }
