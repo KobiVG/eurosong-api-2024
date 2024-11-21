@@ -1,3 +1,4 @@
+
 // Importeren van de express module in node_modules
 const express = require('express');
 const cors = require('cors');
@@ -40,7 +41,7 @@ app.get('/api/songs', (req, res) => {
     const db = new Database();
     db.getQuery(`
         SELECT
-            song_id, s.name AS song_name, a.name AS artist_name
+            song_id, s.name AS songname, a.name AS artistname
         FROM
             songs AS s
                 INNER JOIN
