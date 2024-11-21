@@ -5,7 +5,7 @@
         </h1>
 
         <div>
-            <button @click="prevSong()">
+            <button @click="prevSong()" :disabled="activeSongIndex == 0">
                 Prev song
             </button>
 
@@ -13,7 +13,7 @@
                 {{ songs[activeSongIndex].artist_name }} - Song: {{ songs[activeSongIndex].song_name }}
             </div>
 
-            <button @click="nextSong()">
+            <button @click="nextSong()" :disabled="activeSongIndex == songs.length - 1">
                 Next song
             </button>
         </div>
@@ -21,9 +21,9 @@
         <br>
 
         <div>
-            <button> Add 2 votes </button>
-            <button> Add 4 votes </button>
-            <button> Add 6 votes </button>
+            <button @click="addVote(2)"> Add 2 votes </button>
+            <button @click="addVote(4)"> Add 4 votes </button>
+            <button @click="addVote(6)"> Add 6 votes </button>
         </div>
     </div>
 </template>
@@ -41,6 +41,7 @@
             }
         },
         methods: {
+            // song methods
             fetchSongs() {
                 fetch("http://localhost:3000/api/songs")
                     .then(response => response.json())
@@ -58,6 +59,10 @@
                 if (this.activeSongIndex < this.songs.length - 1) {
                     this.activeSongIndex++;
                 }
+            },
+            // vote methods
+            addVote(points) {
+                console.log("Adding " + points);
             }
         }
     }
