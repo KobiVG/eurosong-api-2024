@@ -34,7 +34,7 @@
     },
     data() {
       return {
-        activePage: 'artists',
+        activePage: 'ranking',
         pages: ['home', 'ranking', 'voting', 'artists']
       }
     },
