@@ -41,7 +41,7 @@ app.get('/api/songs', (req, res) => {
     const db = new Database();
     db.getQuery(`
         SELECT
-            song_id, s.name AS songname, a.name AS artistname
+            song_id, s.name AS song_name, a.name AS artist_name
         FROM
             songs AS s
                 INNER JOIN
